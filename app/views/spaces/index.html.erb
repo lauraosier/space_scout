@@ -1,0 +1,39 @@
+<h1>Listing spaces</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th>Hours</th>
+    <th>Wifi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spaces.each do |space| %>
+  <tr>
+    <td><%= space.name %></td>
+    <td><%= space.address %></td>
+    <td><%= space.city %></td>
+    <td><%= space.state %></td>
+    <td><%= space.zip %></td>
+    <td><%= space.phone %></td>
+    <td><%= space.website %></td>
+    <td><%= space.hours %></td>
+    <td><%= space.wifi %></td>
+    <td><%= link_to 'Show', space %></td>
+    <td><%= link_to 'Edit', edit_space_path(space) %></td>
+    <td><%= link_to 'Destroy', space, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Space', new_space_path %>
