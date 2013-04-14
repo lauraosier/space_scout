@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  space_id: 1
+  day_id: 1
+  num_seats: 1
+
+two:
+  space_id: 1
+  day_id: 1
+  num_seats: 1

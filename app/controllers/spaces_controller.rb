@@ -14,7 +14,7 @@ class SpacesController < ApplicationController
   # GET /spaces/1.json
   def show
     @space = Space.find(params[:id])
-
+    @reservation = Reservation.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @space }

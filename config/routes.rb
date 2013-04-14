@@ -1,5 +1,16 @@
 Workspace::Application.routes.draw do
+  resources :days
+
+
+  resources :availabilities
+
+
+  resources :users
+
+
   resources :spaces
+
+  resources :reservations
 
 
   # The priority is based upon order of creation:

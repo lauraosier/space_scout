@@ -46,5 +46,19 @@
 </p>
 
 
+<!-- TODO: limit seats for a reservation -->
+<%= form_for @reservation do |f| %>
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id %>
+  <%= f.label :availability_id %>
+  <%= f.text_field :availability_id %>
+  <%= f.label :seats %>
+  <%= f.number_field :seats %>
+  <%= f.submit %>
+<% end %>
+
+
+
+
 <%= link_to 'Edit', edit_space_path(@space) %> |
 <%= link_to 'Back', spaces_path %>
