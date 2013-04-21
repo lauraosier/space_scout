@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421144727) do
+ActiveRecord::Schema.define(:version => 20130421162845) do
 
   create_table "availabilities", :force => true do |t|
     t.integer  "space_id"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130421144727) do
     t.integer  "price"
     t.integer  "noise"
     t.integer  "seats"
+    t.string   "image_file"
   end
 
   create_table "users", :force => true do |t|

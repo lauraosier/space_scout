@@ -2,8 +2,17 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    location = params[:location]
-    @spaces = Space.where('city LIKE ? OR state LIKE ? OR zip LIKE ?', location, location, location)
+    if params[:seats].present? || params[:price].present? || params[:wifi].present? || params[:noise].present?
+      @spaces = Space.where('city LIKE ? OR state LIKE ? OR zip LIKE ?', params[:location], params[:location], params[:location])
+      params[:seats].present? ? seats = "seats LIKE #{params[:seats]}" : seats = ""
+      params[:price].present? ? price = " OR price LIKE #{params[:price]}" : price = ""
+      params[:wifi].present? ? wifi = " OR wifi LIKE #{params[:wifi]}" : wifi = ""
+      params[:noise].present? ? noise = " OR noise LIKE #{params[:noise]}" : noise = ""
+        query = seats + price + wifi + noise
+      @spaces = @spaces.where(query)
+    else
+      @spaces = Space.where('city LIKE ? OR state LIKE ? OR zip LIKE ?', params[:location], params[:location], params[:location])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

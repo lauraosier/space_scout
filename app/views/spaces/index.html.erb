@@ -22,19 +22,19 @@
         <%#= date_select 'space', 'date', id: "datepicker" %>
         <li class="filter-bar">
           <%= label_tag 'Number of seats' %>
-          <%= select_tag 'number', options_for_select(1..10), include_blank: true   %>
+          <%= select_tag 'seats', options_for_select(1..10, params[:seats]), include_blank: true   %>
         </li>
         <li class="filter-bar">
           <%= label_tag 'price' %>
-          <%= select_tag 'price', options_for_select([100, 200]), include_blank:   true %>
+          <%= select_tag 'price', options_for_select([['0 - $10', 0], ['$11 - $20', 1],['$21 - $30', 2], ['$31 - $40', 3], ['$41 - $50', 4]], params[:price]), include_blank:   true %>
         </li>
         <li class="filter-bar">
           <%= label_tag 'wifi' %>
-          <%= select_tag 'wifi', options_for_select([['yes', 0], ['no', 1]]),   include_blank: true %>
+          <%= select_tag 'wifi', options_for_select([['yes', 0], ['no', 1]], params[:wifi]),   include_blank: true %>
         </li>
         <li class="filter-bar">
           <%= label_tag 'noise' %>
-          <%= select_tag 'noise', options_for_select([['pindrop silence', 0], ['    quiet', 1],['light conversation', 2],['lively', 3], ['loud', 4]],   ), include_blank: true %>
+          <%= select_tag 'noise', options_for_select([['pindrop silence', 0], ['    quiet', 1],['light conversation', 2],['lively', 3], ['loud', 4]], params[:noise] ), include_blank: true %>
         </li>
         <%= hidden_field_tag 'location', params[:location] %>
         <li class="filter-bar filter-submit">
@@ -49,7 +49,7 @@
 <div id="listings" class="row">
   <% @spaces.each do |space| %>
     <div class="span4 listing-item">
-      <%= link_to(image_tag('Yale Art Gallery.jpg'), space) %>
+      <%= link_to(image_tag("#{space.image_file}", size: '285x280'), space) %>
       <br>
       <span>
         <%= space.name %>
