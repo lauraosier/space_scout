@@ -1,4 +1,6 @@
 Workspace::Application.routes.draw do
+  root :to => 'Pages#home'
+
   resources :days
 
 
@@ -11,6 +13,8 @@ Workspace::Application.routes.draw do
   resources :spaces
 
   resources :reservations
+
+  post '/space-search' => 'Spaces#index'
 
 
   # The priority is based upon order of creation:

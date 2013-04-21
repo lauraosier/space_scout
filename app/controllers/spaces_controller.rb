@@ -2,7 +2,8 @@ class SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.all
+    location = params[:location]
+    @spaces = Space.where('city LIKE ? OR state LIKE ? OR zip LIKE ?', location, location, location)
 
     respond_to do |format|
       format.html # index.html.erb

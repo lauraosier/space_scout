@@ -1,3 +1,56 @@
 // Place all the styles related to the Spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.filter-bar-main {
+  margin: auto;
+}
+.filter-bar{
+  float: left;
+
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+li:not(:first-child) {
+  margin-left: 20px;
+}
+
+select {
+  width: 150px;
+}
+
+input#date {
+  width: 150px;
+}
+
+.filter-submit {
+  padding-top: 25px;
+}
+
+.listing-header {
+  display: inline-block;
+  margin: 20px 0;
+}
+
+#search_bar {
+position: relative;
+top: 283px;
+right: 476px;
+font-size: 30px;
+}
+
+input#location {
+line-height: 50px;
+height: 40px;
+font-size: 24px;
+width: 300px;
+}
+
+.search_button {
+  font-size: 24px;
+margin-bottom: 9px;
+}
