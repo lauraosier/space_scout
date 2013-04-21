@@ -1,6 +1,6 @@
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
-    <h1 id='landing-header'>Find a place to work</h1>
+    <h1 id='landing-header'>Find a space to work</h1>
     <%= form_tag('/space-search', id: :search_bar)  do %>
       <%= text_field_tag :location,'',placeholder: 'enter your location' %>
       <%= submit_tag 'search', class: "btn btn-inverse btn-large search_button" %>

@@ -17,25 +17,31 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 0,
-        wifi: true,
+        wifi: 5,
         noise: 3,
-        image_file: 'space1.png')
+        image_file: 'space1.png',
+        description: "Founded in 2002, the Fulton Street Collective is dedicated to the development of artists and the artistic community. Featuring 28 artist studios, a gallery exhibition space, and more than 2500 square feet of resident and shared members space, FSC spans two floors and houses studios of emerging and established Chicago artists and creative professionals. FSC members work in a variety of disciplines including painting, mixed media, and fashion design.",
+        rules: "No smoking in building, and clean up after yourself.",
+        hours: "Mon - Wed, 8:00am - 7:00pm")
 s.save
 
 s = Space.new(
-        name: 'Fullerton Street Collective',
+        name: 'Fulton Street Collective',
         address: '2000 West Fulton Street',
         city: 'Chicago',
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 1,
-        wifi: true,
+        wifi: 5,
         noise: 3,
-        image_file: 'space2.jpg')
+        image_file: 'space2.jpg',
+        description: "Founded in 2002, the Fulton Street Collective is dedicated to the development of artists and the artistic community. Featuring 28 artist studios, a gallery exhibition space, and more than 2500 square feet of resident and shared members space, FSC spans two floors and houses studios of emerging and established Chicago artists and creative professionals. FSC members work in a variety of disciplines including painting, sculpture, mixed media, photography, digital media, dance, and fashion design.",
+        rules: "No smoking in building, and clean up after yourself.",
+        hours: "Mon - Wed, 8:00am - 7:00pm")
 s.save
 
 s = Space.new(
@@ -45,9 +51,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 3,
-        wifi: true,
+        wifi: 5,
         noise: 2,
         image_file: 'space3.jpg')
 s.save
@@ -59,9 +65,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 2,
-        wifi: true,
+        wifi: 5,
         noise: 3,
         image_file: 'space4.jpg')
 s.save
@@ -73,9 +79,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 0,
-        wifi: true,
+        wifi: 5,
         noise: 3,
         image_file: 'space5.jpg')
 s.save
@@ -87,9 +93,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 1,
-        wifi: true,
+        wifi: 5,
         noise: 3,
         image_file: 'space6.jpg')
 s.save
@@ -101,9 +107,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 1,
-        wifi: true,
+        wifi: 5,
         noise: 1,
         image_file: 'space7.jpg')
 s.save
@@ -115,9 +121,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 1,
-        wifi: true,
+        wifi: 5,
         noise: 1,
         image_file: 'space8.jpg')
 s.save
@@ -129,9 +135,9 @@ s = Space.new(
         state: 'IL',
         zip: '60622',
         phone: '312-725-4223',
-        seats: 5,
+        seats: 1,
         price: 2,
-        wifi: true,
+        wifi: 5,
         noise: 5,
         image_file: 'space9.JPG')
 s.save

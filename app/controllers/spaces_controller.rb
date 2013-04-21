@@ -5,9 +5,9 @@ class SpacesController < ApplicationController
     if params[:seats].present? || params[:price].present? || params[:wifi].present? || params[:noise].present?
       @spaces = Space.where('city LIKE ? OR state LIKE ? OR zip LIKE ?', params[:location], params[:location], params[:location])
       params[:seats].present? ? seats = "seats LIKE #{params[:seats]}" : seats = ""
-      params[:price].present? ? price = " OR price LIKE #{params[:price]}" : price = ""
-      params[:wifi].present? ? wifi = " OR wifi LIKE #{params[:wifi]}" : wifi = ""
-      params[:noise].present? ? noise = " OR noise LIKE #{params[:noise]}" : noise = ""
+      params[:price].present? ? price = " AND price LIKE #{params[:price]}" : price = ""
+      params[:wifi].present? ? wifi = " AND wifi LIKE #{params[:wifi]}" : wifi = ""
+      params[:noise].present? ? noise = " AND noise LIKE #{params[:noise]}" : noise = ""
         query = seats + price + wifi + noise
       @spaces = @spaces.where(query)
     else

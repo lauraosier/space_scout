@@ -1,15 +1,21 @@
+  <script>
+  $(function() {
+    $("#from").datepicker();
+    $("#to").datepicker();
+  });
+  </script>
 <p id="notice"><%= notice %></p>
 <div class="row ">
   <div class="span7 space_photos">
-    <%= image_tag "Bristol_art.jpg"%>
+    <%= image_tag @space.image_file %>
   </div>
 
   <div class="span5">
     <ul class="nav nav-tabs">
       <li class="active"><a href=".description" data-toggle="tab">Description</a></li>
       <li><a href=".details" data-toggle="tab">Details</a></li>
-      <li><a href=".schedule" data-toggle="tab">Schedule</a></li>
       <li><a href=".map" data-toggle="tab">Map</a></li>
+      <li><a href=".schedule" data-toggle="tab">Schedule</a></li>
     </ul>
 
     <div class="tab-content">
@@ -18,7 +24,6 @@
           <i class="icon-users"></i>
           <i class="icon-beamed-note"></i>
           <i class="icon-signal"></i>
-          <i class="icon-sound"></i>
           <i class="icon-monitor"></i>
           <i class="icon-suitcase"></i>
           <i class="icon-megaphone"></i>
@@ -47,26 +52,6 @@
         </div>
       </div>
 
-      <div class="schedule tab-pane">
-        <%= render 'calendar'%>
-        <!-- CALENDAR -->
-        <%= form_tag '#' do %>
-          <ul class="schedule-to-from">
-            <li class="filter-bar">
-              <%= label_tag 'from' %>
-              <%= text_field_tag 'from' %>
-            </li >
-            <li class="filter-bar">
-              <%= label_tag 'to' %>
-              <%= text_field_tag 'to' %>
-            </li >
-            <li>
-              <%= submit_tag 'reserve', class: 'btn btn-info btn-small reserve-btn' %>
-            </li> 
-          </ul>
-        <% end -%>
-      </div>
-
       <div class="map tab-pane">
         <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%=@space.address%>&zoom=13&size=600x300&maptype=roadmap&markers=color:blue|<%=@space.address%>&sensor=false" />
         <br>
@@ -75,9 +60,28 @@
 
         <p><%= @space.city %>, <%= @space.state %> <%= @space.zip %></p>
       </div>
+      <div class="schedule tab-pane">
+        <%= render 'calendar'%>
+        <!-- CALENDAR -->
+        <%= form_tag '#' do %>
+          <ul class="schedule-to-from">
+            <li class="filter-bar">
+              <%= label_tag 'from' %>
+              <%= text_field_tag 'from', '4/23/2013' %>
+            </li >
+            <li class="filter-bar">
+              <%= label_tag 'to' %>
+              <%= text_field_tag 'to', '4/24/2013' %>
+            </li >
+            <li>
+              <%= submit_tag 'reserve', class: 'btn btn-info btn-small reserve-btn' %>
+            </li> 
+          </ul>
+        <% end -%>
+      </div>
+
 
     </div>
   </div>
 </div>
 
-<%= link_to 'All spaces', spaces_path %>
