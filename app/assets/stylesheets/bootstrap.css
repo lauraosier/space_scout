@@ -4374,7 +4374,7 @@ input[type="submit"].btn.btn-mini {
   background-image: -o-linear-gradient(top, #ff6e00, #ff6e00);
   background-image: linear-gradient(to bottom, #ff6e00, #ff6e00);
   background-repeat: repeat-x;
-  border: 1px solid #e0e0e0;
+  /*border: 1px solid #e0e0e0;*/
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -6240,7 +6240,7 @@ hr {
 }
 
 .navbar .navbar-inner {
-  border-bottom: 2px solid #eeeeee;
+  /*border-bottom: 2px solid #eeeeee;*/
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;

@@ -1,52 +1,59 @@
   <script>
   $(function() {
-    $("#date").datepicker();
+    $("#from").datepicker();
+    $("#to").datepicker();
   });
-  console.log('hello')
   </script>
 
-
-<h1 id="listing-header">Listing spaces for <%= params[:location] %></h1>
-<%= link_to 'new location', root_url, id: 'listing-header-link' %>
-<div class=" filter-bar-main row">
-<%= form_tag(spaces_path, method: 'get') do %>
-    <ul>
-      <li class="filter-bar">
-        <%= label_tag 'date' %>
-        <%= text_field_tag 'date' %>
-      </li >
-      <%#= date_select 'space', 'date', id: "datepicker" %>
-      <li class="filter-bar">
-        <%= label_tag 'Number of seats' %>
-        <%= select_tag 'number', options_for_select(1..10), include_blank: true %>
-      </li>
-      <li class="filter-bar">
-        <%= label_tag 'price' %>
-        <%= select_tag 'price', options_for_select([100, 200]), include_blank: true %>
-      </li>
-      <li class="filter-bar">
-        <%= label_tag 'wifi' %>
-        <%= select_tag 'wifi', options_for_select([['yes', 0], ['no', 1]]), include_blank: true %>
-      </li>
-      <li class="filter-bar">
-        <%= label_tag 'noise' %>
-        <%= select_tag 'noise', options_for_select([['pindrop silence', 0], ['  quiet', 1],['light conversation', 2],['lively', 3], ['loud', 4]], ), include_blank: true %>
-      </li>
-      <%= hidden_field_tag 'location', params[:location] %>
-      <li class="filter-bar filter-submit">
-        <%= submit_tag 'filter', class: 'btn btn-info' %>
-      </li>
-    </ul>
-<% end %>
+<div id="fixed-header">
+  <h1 id="listing-header">Listing spaces for <%= params[:location] %></h1>
+  <%= link_to 'new location', root_url, id: 'listing-header-link' %>
+  <div class=" filter-bar-main row">
+  <%= form_tag(spaces_path, method: 'get') do %>
+      <ul>
+        <li class="filter-bar">
+          <%= label_tag 'from' %>
+          <%= text_field_tag 'from' %>
+        </li >
+        <li class="filter-bar">
+          <%= label_tag 'to' %>
+          <%= text_field_tag 'to' %>
+        </li >
+        <%#= date_select 'space', 'date', id: "datepicker" %>
+        <li class="filter-bar">
+          <%= label_tag 'Number of seats' %>
+          <%= select_tag 'number', options_for_select(1..10), include_blank: true   %>
+        </li>
+        <li class="filter-bar">
+          <%= label_tag 'price' %>
+          <%= select_tag 'price', options_for_select([100, 200]), include_blank:   true %>
+        </li>
+        <li class="filter-bar">
+          <%= label_tag 'wifi' %>
+          <%= select_tag 'wifi', options_for_select([['yes', 0], ['no', 1]]),   include_blank: true %>
+        </li>
+        <li class="filter-bar">
+          <%= label_tag 'noise' %>
+          <%= select_tag 'noise', options_for_select([['pindrop silence', 0], ['    quiet', 1],['light conversation', 2],['lively', 3], ['loud', 4]],   ), include_blank: true %>
+        </li>
+        <%= hidden_field_tag 'location', params[:location] %>
+        <li class="filter-bar filter-submit">
+          <%= submit_tag 'filter', class: 'btn btn-info' %>
+        </li>
+      </ul>
+  <% end %>
+  </div>
 </div>
 
 
-<div class="row">
+<div id="listings" class="row">
   <% @spaces.each do |space| %>
-    <div class="span4">
+    <div class="span4 listing-item">
       <%= link_to(image_tag('Yale Art Gallery.jpg'), space) %>
-      <%= space.name %>
-      fdsaf
+      <br>
+      <span>
+        <%= space.name %>
+      </span>
     </div>
   <% end %>
 </div>
