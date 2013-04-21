@@ -44,6 +44,14 @@
     <%= f.text_field :hours %>
   </div>
   <div class="field">
+    <%= f.label :description, "Brief description of your space" %><br />
+    <%= f.text_area :description %>
+  </div>
+    <div class="field">
+    <%= f.label :rules %><br />
+    <%= f.text_area :rules %>
+  </div>
+  <div class="field">
     <%= f.label :wifi %><br />
     <%= f.number_field :wifi %>
   </div>

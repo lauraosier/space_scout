@@ -10,7 +10,7 @@
   <%= link_to 'new location', root_url, id: 'listing-header-link' %>
   <div class=" filter-bar-main row">
   <%= form_tag(spaces_path, method: 'get') do %>
-      <ul>
+      <ul class="filter">
         <li class="filter-bar">
           <%= label_tag 'from' %>
           <%= text_field_tag 'from' %>

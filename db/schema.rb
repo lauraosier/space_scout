@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421144727) do
+ActiveRecord::Schema.define(:version => 20130421155620) do
 
   create_table "availabilities", :force => true do |t|
     t.integer  "space_id"
@@ -45,12 +45,14 @@ ActiveRecord::Schema.define(:version => 20130421144727) do
     t.string   "website"
     t.string   "hours"
     t.integer  "wifi"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
     t.integer  "price"
     t.integer  "noise"
     t.integer  "seats"
+    t.text     "description"
+    t.text     "rules"
   end
 
   create_table "users", :force => true do |t|

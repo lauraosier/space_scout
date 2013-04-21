@@ -1,64 +1,83 @@
 <p id="notice"><%= notice %></p>
+<div class="row ">
+  <div class="span7 space_photos">
+    <%= image_tag "Bristol_art.jpg"%>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @space.name %>
-</p>
+  <div class="span5">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href=".description" data-toggle="tab">Description</a></li>
+      <li><a href=".details" data-toggle="tab">Details</a></li>
+      <li><a href=".schedule" data-toggle="tab">Schedule</a></li>
+      <li><a href=".map" data-toggle="tab">Map</a></li>
+    </ul>
 
-<p>
-  <b>Address:</b>
-  <%= @space.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @space.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @space.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @space.zip %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @space.phone %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @space.website %>
-</p>
-
-<p>
-  <b>Hours:</b>
-  <%= @space.hours %>
-</p>
-
-<p>
-  <b>Wifi:</b>
-  <%= @space.wifi %>
-</p>
+    <div class="tab-content">
+      <div class="description tab-pane active">
+        <div class ="amenities">
+          <i class="icon-users"></i>
+          <i class="icon-beamed-note"></i>
+          <i class="icon-signal"></i>
+          <i class="icon-sound"></i>
+          <i class="icon-monitor"></i>
+          <i class="icon-suitcase"></i>
+          <i class="icon-megaphone"></i>
+        </div>
+        <h3><%= link_to @space.name, @space.website %></h3>
+        <p>
+          <%= @space.description%>
+        </p>
+        <p>
+          <b>Space rules:</b>
+          <%= @space.rules%>
+        </p>
 
 
-<!-- TODO: limit seats for a reservation -->
-<%= form_for @reservation do |f| %>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %>
-  <%= f.label :availability_id %>
-  <%= f.text_field :availability_id %>
-  <%= f.label :seats %>
-  <%= f.number_field :seats %>
-  <%= f.submit %>
-<% end %>
+      </div>
 
+      <div class="details tab-pane">
+        <div class="details_p">
+        <i class="icon-phone"></i>
+          <div class="details_text"><%= @space.phone %></div>
+        </div>
 
+        <div class="details_p">
+        <i class="icon-clock"></i>
+          <div class="details_text"><%= @space.hours%></div>
+        </div>
+      </div>
 
+      <div class="schedule tab-pane">
+        <%= render 'calendar'%>
+        <!-- CALENDAR -->
+        <%= form_tag '#' do %>
+          <ul class="schedule-to-from">
+            <li class="filter-bar">
+              <%= label_tag 'from' %>
+              <%= text_field_tag 'from' %>
+            </li >
+            <li class="filter-bar">
+              <%= label_tag 'to' %>
+              <%= text_field_tag 'to' %>
+            </li >
+            <li>
+              <%= submit_tag 'reserve', class: 'btn btn-info btn-small reserve-btn' %>
+            </li> 
+          </ul>
+        <% end -%>
+      </div>
 
-<%= link_to 'Edit', edit_space_path(@space) %> |
-<%= link_to 'Back', spaces_path %>
+      <div class="map tab-pane">
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center=<%=@space.address%>&zoom=13&size=600x300&maptype=roadmap&markers=color:blue|<%=@space.address%>&sensor=false" />
+        <br>
+        <br>
+        <p><%= @space.address %></p>
+
+        <p><%= @space.city %>, <%= @space.state %> <%= @space.zip %></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= link_to 'All spaces', spaces_path %>
