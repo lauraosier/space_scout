@@ -6,8 +6,8 @@
   </script>
 
 
-<h1 class="listing-header">Listing spaces for <%= params[:location] %></h1>
-<%= link_to 'new location', root_url %>
+<h1 id="listing-header">Listing spaces for <%= params[:location] %></h1>
+<%= link_to 'new location', root_url, id: 'listing-header-link' %>
 <div class=" filter-bar-main row">
 <%= form_tag(spaces_path, method: 'get') do %>
     <ul>
@@ -51,4 +51,3 @@
   <% end %>
 </div>
 
-<%= link_to 'New Space', new_space_path %>

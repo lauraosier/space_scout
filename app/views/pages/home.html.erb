@@ -1,7 +1,8 @@
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
+    <h1 id='landing-header'>Find a place to work</h1>
     <%= form_tag('/space-search', id: :search_bar)  do %>
-      <%= text_field_tag :location,'',placeholder: 'location' %>
+      <%= text_field_tag :location,'',placeholder: 'enter your location' %>
       <%= submit_tag 'search', class: "btn btn-inverse btn-large search_button" %>
     <% end %>
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -10,7 +11,7 @@
   </ol>
   <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item"><%= image_tag('Yale Art Gallery.jpg') %></div>
+    <div class="active item"><%= image_tag('yale2.jpg') %></div>
     <div class="item"><%= image_tag('Yale Art Gallery.jpg') %></div>
     <div class="item"><%= image_tag('Yale Art Gallery.jpg') %></div>
   </div>

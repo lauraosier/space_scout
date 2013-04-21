@@ -10,10 +10,15 @@
 
 }
 
-ul {
+form ul {
   list-style: none;
   margin: 0;
+  border-bottom: 2px solid #eeeeee;
+  height: 60px;
+  margin-left: -20px;
+
 }
+
 
 li:not(:first-child) {
   margin-left: 20px;
@@ -31,26 +36,11 @@ input#date {
   padding-top: 25px;
 }
 
-.listing-header {
+#listing-header {
   display: inline-block;
-  margin: 20px 0;
+  margin: 20px 20px 30px -20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eeeeee;
 }
 
-#search_bar {
-position: relative;
-top: 283px;
-right: 476px;
-font-size: 30px;
-}
 
-input#location {
-line-height: 50px;
-height: 40px;
-font-size: 24px;
-width: 300px;
-}
-
-.search_button {
-  font-size: 24px;
-margin-bottom: 9px;
-}
